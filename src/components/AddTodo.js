@@ -1,8 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addTodo} from '../redux/actions'
+import { useAlert } from 'react-alert'
+import { Button, TextField } from '@material-ui/core';
+// import './index.css'
 
 class AddTodo extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {input:""};
@@ -15,8 +19,9 @@ class AddTodo extends React.Component {
     }
 
     handleAddTodo =()=>{
-
-        this.props.addTodo(this.state.input);
+        // const alert = useAlert()
+        console.log(this.state.input)
+        this.state.input?this.props.addTodo(this.state.input):alert("Enter the task Todo");
         this.setState({input:""});
 
 
@@ -24,15 +29,21 @@ class AddTodo extends React.Component {
     render(){
 
         return (
-            <div>
-                <input onChange={e=>this.updateInput(e.target.value)}
-                value={this.state.input}
-            />
-            <button className="add-todo" onClick={this.handleAddTodo}>
-                
-                ADD Todo
+            <div className="add-todo-list"> 
 
-            </button>
+            <TextField
+              label="Name"
+              margin="dense"
+              fullWidth
+              required
+              value={this.state.input}
+              onChange={e=>this.updateInput(e.target.value)}
+              variant="outlined"
+            />
+
+            <Button variant="contained" color="primary" onClick={this.handleAddTodo} >
+                Add Todo
+            </Button>
 
             </div>
         )

@@ -6,13 +6,11 @@ import './index.css';
 export default function App(){
 
   return(
-
-    <div className="todo-app">
-      <h1>Todo List </h1>
-      <AddTodo />
-      <TodoList />
-      <VisibilityFilters />
-
-    </div>
+      <div className="todo-app">
+        <h1>Todo List </h1>
+        <AddTodo />
+        <TodoList />
+        <VisibilityFilters />
+      </div>
   )
 }
