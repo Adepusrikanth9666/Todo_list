@@ -44,6 +44,7 @@ class AddTodo extends React.Component {
             <Button variant="contained" color="primary" onClick={this.handleAddTodo} >
                 Add Todo
             </Button>
+            <Pagination count={10} variant="outlined" color="primary" />
 
             </div>
         )

@@ -21,6 +21,7 @@ const VisibilityFilters = ({ activeFilter, setFilter }) => {
             }}
           >
             {currentFilter}
+          
           </span>
         );
       })}
